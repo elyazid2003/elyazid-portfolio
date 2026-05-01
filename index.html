@@ -1200,34 +1200,27 @@
     position: fixed;
     bottom: 1.5rem;
     right: 1.5rem;
-    width: 44px;
-    height: 44px;
+    width: 46px;
+    height: 46px;
     background: var(--blue);
     color: white;
     border: none;
     border-radius: 50%;
-    font-size: 1.1rem;
+    font-size: 1.2rem;
+    font-weight: 700;
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 4px 16px rgba(37,99,235,0.35);
-    transition: all 0.3s;
-    opacity: 0;
-    transform: translateY(16px);
-    pointer-events: none;
+    box-shadow: 0 4px 20px rgba(37,99,235,0.45);
     z-index: 9999;
-    transition: opacity 0.3s ease, transform 0.3s ease;
-  }
-  .back-to-top.visible {
+    transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
     opacity: 1;
-    transform: translateY(0);
-    pointer-events: all;
   }
   .back-to-top:hover {
     background: var(--navy);
     transform: translateY(-3px);
-    box-shadow: 0 8px 24px rgba(30,58,95,0.3);
+    box-shadow: 0 8px 28px rgba(30,58,95,0.35);
   }
 
   /* ANIMATED COUNTER */
@@ -1820,13 +1813,7 @@
   });
 
 
-  // Back to top
-  const backBtn = document.getElementById('backToTop');
-  if (backBtn) {
-    window.addEventListener('scroll', () => {
-      backBtn.classList.toggle('visible', window.scrollY > 200);
-    });
-  }
+  // Back to top button always visible
 
   // Animated counters
   const counters = document.querySelectorAll('.stat-number');
